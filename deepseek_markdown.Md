@@ -2,6 +2,8 @@
 
 This guide walks you through cleaning and formatting a USB drive using Windows Command Prompt (`diskpart`).
 
+
+
 ## Prerequisites
 - Administrator access
 - USB drive inserted
