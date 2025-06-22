@@ -1,41 +1,69 @@
-## Steps to Clean and Format the Drive
+# USB Drive Cleaning and Formatting Guide
 
-👉 Steps to Clean and Format the Drive:
-Open Command Prompt as Administrator.
+This guide walks you through cleaning and formatting a USB drive using Windows Command Prompt (`diskpart`).
 
-Type:
+## Prerequisites
+- Administrator access
+- USB drive inserted
 
-cmd
-Copy
-Edit
+## Steps
+
+### 1. Open Command Prompt as Administrator
+- Press Win + X
+- Select "Command Prompt (Admin)" or "Windows Terminal (Admin)"
+
+### 2. Start DiskPart Utility
+```cmd
 diskpart
-Then list all disks:
-
-c
-Copy
-Edit
+3. List Available Disks
+cmd
 list disk
-Identify your USB drive by size and select it:
+Note: Identify your USB drive by its size from the list.
 
+4. Select Your USB Drive
 cmd
-Copy
-Edit
 select disk X
-(Replace X with the correct disk number for your USB)
+(Replace X with your USB drive's disk number)
 
-Now run:
-
+5. Clean the Drive
 cmd
-Copy
-Edit
 clean
-Then:
+⚠️ Warning: This will erase ALL data on the selected disk!
 
+6. Create and Format New Partition
 cmd
-Copy
-Edit
 create partition primary
 select partition 1
 format fs=ntfs quick
 assign
 exit
+Additional Options
+For FAT32 format (compatible with most devices):
+
+cmd
+format fs=fat32 quick
+For exFAT format (for large files):
+
+cmd
+format fs=exfat quick
+Troubleshooting
+If you get "Access Denied" errors, ensure:
+
+You're running as Administrator
+
+No files from the USB are currently open
+
+The USB isn't write-protected
+
+text
+
+This version includes:
+1. Clear hierarchical headings
+2. Warning notices for destructive operations
+3. Additional formatting options
+4. Troubleshooting section
+5. Proper code block formatting
+6. Good spacing for readability
+
+The formatting will render perfectly on GitHub and provides a complete guide for users.
+New cha
